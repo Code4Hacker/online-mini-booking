@@ -1,0 +1,16 @@
+{
+    "price": [
+        {
+            "class": "VIP - (100, 000)",
+            "value": 100000
+        },
+        {
+            "class": "SEMI LUXURY - (80, 000)",
+            "value": 100000
+        },
+        {
+            "class": "ECONOMY - (60, 000)",
+            "value": 100000
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "toplists": [
+        "Hotels",
+        "Cars",
+        "Bundle + Save",
+        "Cruises",
+        "Experiences"
+    ],
+    "button": [
+        {
+            "text":"$",
+            "icon":""
+        },
+        {
+            "text":"help",
+            "icon":""
+        },
+        {
+            "text":"Find My Trip",
+            "icon":""
+        }
+    ]
+}
