@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { Price, Tanzania, TopList } from '../raws'
-import { Accordion, Checkbox, DatePicker, DateRangePicker, Divider, Placeholder, RangeSlider, SelectPicker, Tabs, Whisper } from 'rsuite';
-import { Add, Remove, Wifi } from '@mui/icons-material';
-import { Input, InputGroup } from 'rsuite';
-import SearchIcon from '@rsuite/icons/Search';
+import { Tanzania, TopList } from '../raws'
+import {  Placeholder,  Tabs } from 'rsuite';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { baseURL } from '../requests/baseURL';
@@ -14,10 +11,8 @@ import { useNavigate } from 'react-router';
 
 
 const Dashboard2 = () => {
-    const [start, setStart] = useState(0);
     const [end, setEnd] = useState("Dar es Salaam");
     const [location, setLocation] = useState("Dodoma");
-    const [price, setPrice] = useState("");
     const [bookings, setBookings] = useState([]);
     const [bookings2, setBookings2] = useState([]);
     const [seats, setSeats] = useState(1);
@@ -159,7 +154,9 @@ const Dashboard2 = () => {
     }
     useEffect(() => {
         getBooking();
+        // eslint-disable-next-line
         getMyBooking()
+        // eslint-disable-next-line
     }, [])
     return (
         <div className='dashbd'>
@@ -184,7 +181,7 @@ const Dashboard2 = () => {
                         <div className="lists">
                             <ul>
                                 {
-                                    TopList.toplists != undefined && TopList.toplists.length > 0 ?
+                                    TopList.toplists !== undefined && TopList.toplists.length > 0 ?
                                         TopList.toplists.map((item, key) => <li key={key}>{item}</li>) :
                                         'Loading ...'
 
@@ -193,7 +190,7 @@ const Dashboard2 = () => {
                     </div>
                     <div className="col">
                         {
-                            TopList.button != undefined && TopList.button.length > 0 ?
+                            TopList.button !== undefined && TopList.button.length > 0 ?
                                 TopList.button.map((item, key) => <button className='' key={key}><i>{item.icon}</i><span>{item.text}</span></button>) :
                                 'Loading ...'
                         }
@@ -209,7 +206,7 @@ const Dashboard2 = () => {
                         <select name="" id="" className='' value={location} onChange={(e) => setLocation(e.target.value)}>
 
                             {
-                                Tanzania != undefined && Tanzania.length > 0 ? Tanzania.map((data, key) => <option value={data} key={key}>{data}</option>) : <option value={'null'}>{'Please Wait ...'}</option>
+                                Tanzania !== undefined && Tanzania.length > 0 ? Tanzania.map((data, key) => <option value={data} key={key}>{data}</option>) : <option value={'null'}>{'Please Wait ...'}</option>
                             }
                         </select>
                     </div>
@@ -232,7 +229,7 @@ const Dashboard2 = () => {
                     <div className="selections">
                         <select name="" id="" className='' value={end} onChange={(e) => setEnd(e.target.value)}>
                             {
-                                Tanzania != undefined && Tanzania.length > 0 ? Tanzania.map((data, key) => <option value={data} key={key}>{data}</option>) : <option value={'null'}>{'Please Wait ...'}</option>
+                                Tanzania !== undefined && Tanzania.length > 0 ? Tanzania.map((data, key) => <option value={data} key={key}>{data}</option>) : <option value={'null'}>{'Please Wait ...'}</option>
                             }
                         </select>
                     </div>
@@ -260,7 +257,7 @@ const Dashboard2 = () => {
             </div>
             <div className="main_grid">
                 <div className="">
-                    <iframe src={`https://www.google.com/maps/embed/v1/directions?origin=${location}&destination=${end}&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8`} frameBorder="0" ></iframe>
+                    <iframe title='oo' src={`https://www.google.com/maps/embed/v1/directions?origin=${location}&destination=${end}&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8`} frameBorder="0" ></iframe>
                     {/* <h5 className=' pl-3 pr-3 pt-2'>Sort By</h5>
                     <SelectPicker
                         data={data}
